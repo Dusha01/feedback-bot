@@ -1,0 +1,11 @@
+services:
+  feedback-bot:
+    build:
+      context: ..
+      dockerfile: Docker/Dockerfile
+    container_name: feedback-bot
+    env_file:
+      - ../.env
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
