@@ -1,12 +1,11 @@
 import logging
+
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from src.config import settings
 from src.api.routes import rt as rt_forms
-
-
+from src.config import settings
 
 app = FastAPI(
     title="Dusha fullstack API",

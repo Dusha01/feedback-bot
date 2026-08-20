@@ -10,6 +10,7 @@
 
 # Documentation
 README.md
+README_EN.md
 LICENSE
 Makefile
 
@@ -20,6 +21,7 @@ Makefile
 *.swo
 *~
 
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -42,6 +44,15 @@ wheels/
 *.egg
 MANIFEST
 
+# Dev / Test
+tests/
+.pytest_cache/
+.ruff_cache/
+requirements-dev.txt
+pyproject.toml
+
+# Assets
+img/
 
 # Docker
 Docker/

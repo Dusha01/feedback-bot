@@ -1,4 +1,4 @@
-from typing import List, Optional
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -6,12 +6,12 @@ class Settings(BaseSettings):
     BOT_TOKEN: str
     CHAT_ID: str
 
-    CORS_ORIGINS: List[str]
+    CORS_ORIGINS: list[str]
     APP_HOST: str
     APP_PORT: int
     APP_DEBUG: bool
 
-    TELEGRAM_PROXY_URL: Optional[str] = None
+    TELEGRAM_PROXY_URL: str | None = None
 
 
     model_config = SettingsConfigDict(

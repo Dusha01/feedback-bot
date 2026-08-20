@@ -1,0 +1,5 @@
+# Dev (install into backend/.venv)
+-r requirements.txt
+pytest>=8.0,<9
+httpx>=0.27
+ruff>=0.15.15
