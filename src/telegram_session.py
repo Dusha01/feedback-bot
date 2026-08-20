@@ -1,14 +1,14 @@
 from __future__ import annotations
 
 import logging
-from typing import Optional
-from aiohttp_socks import ProxyConnector
+
 from aiogram.client.session.aiohttp import AiohttpSession
+from aiohttp_socks import ProxyConnector
 
 logger = logging.getLogger(__name__)
 
 
-def create_telegram_aiohttp_session(proxy_url: Optional[str]) -> AiohttpSession:
+def create_telegram_aiohttp_session(proxy_url: str | None) -> AiohttpSession:
 
     raw = (proxy_url or "").strip()
     if not raw:
@@ -16,7 +16,7 @@ def create_telegram_aiohttp_session(proxy_url: Optional[str]) -> AiohttpSession:
 
     low = raw.lower()
     if low.startswith("socks5://") or low.startswith("socks4://"):
-        
+
         connector = ProxyConnector.from_url(raw)
         logger.info("Telegram API: используется SOCKS-прокси")
         return AiohttpSession(connector=connector)
